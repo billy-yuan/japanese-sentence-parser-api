@@ -8,6 +8,7 @@ app = Flask(__name__)
 api = Api(app)
 
 
+@api.resource('/japanese_sentence_parser')
 class JapaneseSentenceParser(Resource):
     def post(self):
         sentence = request.json["sentence"]
@@ -15,8 +16,6 @@ class JapaneseSentenceParser(Resource):
 
         return {"sentence": sentence, "words": words}
 
-
-api.add_resource(JapaneseSentenceParser, '/japanese_sentence_parser')
 
 if __name__ == "__main__":
     app.run()
