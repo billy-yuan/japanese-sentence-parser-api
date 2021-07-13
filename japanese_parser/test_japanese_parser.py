@@ -24,6 +24,12 @@ class TestJapaneseParser(unittest.TestCase):
         expected = ["カレー", "が", "好き", "です"]
         self.assertListEqual(sorted(output), sorted(expected))
 
+    def test_only_extract_unique_words(self):
+        input_sentence = "カレーが好きです　カレーが好きです"
+        output = japanese_parser.get_words_from_sentence(input_sentence)
+        expected = ["カレー", "が", "好き", "です"]
+        self.assertListEqual(sorted(output), sorted(expected))
+
 
 if __name__ == "__main__":
     unittest.main()

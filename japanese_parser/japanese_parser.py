@@ -1,3 +1,4 @@
+from enum import unique
 from typing import List
 import MeCab
 import regex as re
@@ -11,14 +12,14 @@ def get_words_from_sentence(sentence: str) -> List[str]:
     tagger = MeCab.Tagger()
     sentence_no_parantheses = remove_ignore_words(sentence)
     node = tagger.parseToNode(sentence_no_parantheses)
-    unique_words = []
+    unique_words = set()
 
     while node:
         feature = node.feature.split(",")
         if len(feature) > 10 and feature[10] not in ignore_words:
-            unique_words.append(feature[10])
+            unique_words.add(feature[10])
         node = node.next
-    return unique_words
+    return list(unique_words)
 
 
 def remove_ignore_words(sentence: str) -> str:
