@@ -11,7 +11,8 @@ api = Api(app)
 @api.resource('/japanese_sentence_parser')
 class JapaneseSentenceParser(Resource):
     def post(self):
-        sentence = request.json["sentence"]
+        request_data = request.get_json()
+        sentence = request_data["sentence"]
         words = get_words_from_sentence(sentence)
 
         return {"sentence": sentence, "words": words}
