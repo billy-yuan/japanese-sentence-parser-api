@@ -1,7 +1,6 @@
 from enum import unique
 from typing import List
 import MeCab
-import regex as re
 from ignore_words import ignore_words
 
 
