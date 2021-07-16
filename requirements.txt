@@ -4,6 +4,7 @@ charset-normalizer==2.0.3
 click==7.1.2
 Flask==1.1.2
 Flask-RESTful @ file:///home/conda/feedstock_root/build_artifacts/flask-restful_1622406740831/work
+gunicorn==20.1.0
 idna==3.2
 itsdangerous==1.1.0
 Jinja2==2.11.2
