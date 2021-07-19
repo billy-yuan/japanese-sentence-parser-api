@@ -1,1 +1,1 @@
-web gunicorn japanese_parser.app/:app
+web: gunicorn japanese_parser.app:app
