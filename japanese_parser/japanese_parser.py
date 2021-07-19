@@ -1,7 +1,6 @@
-from enum import unique
 from typing import List
 import MeCab
-from ignore_words import ignore_words
+from .ignore_words import ignore_words
 
 
 def get_words_from_sentence(sentence: str) -> List[str]:

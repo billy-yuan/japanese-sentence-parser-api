@@ -1,6 +1,6 @@
 from flask import Flask, request
 from flask_restful import Resource, Api
-from japanese_parser import get_words_from_sentence
+from .japanese_parser import get_words_from_sentence
 
 
 app = Flask(__name__)
